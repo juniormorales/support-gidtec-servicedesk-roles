@@ -1,0 +1,31 @@
+spring:
+  cloud:
+    config:
+      enabled: false
+  application:
+    name: support-gidtec-servicedesk-roles
+  data:
+    mongodb:
+      uri: mongodb+srv://juniormoralesbrenis:sj7EX9iTxHWKiXob@cluster0.arspgug.mongodb.net/gidtec-servicedesk-db?retryWrites=true&w=majority
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  port: 8083
+application:
+  openapi:
+    info:
+      title: Service Desk Roles
+      description: Permite consultar, registrar, actualizar y eliminar informacion de los roles en el service desk
+      version: 1.0.0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+
+audit-properties:
+  status-code:
+    IN: INACTIVO
+    AC: ACTIVO
